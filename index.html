@@ -1,0 +1,74 @@
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HH Leasing</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 0; padding: 0; background: white; color: black; }
+        header { padding: 20px; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #ccc; }
+        nav ul { list-style: none; display: flex; gap: 20px; }
+        nav a { text-decoration: none; color: black; }
+        .hero { text-align: center; padding: 100px 20px; }
+        .hero h1 { font-size: 40px; font-weight: bold; }
+        .hero p { color: gray; font-size: 18px; }
+        .button { background: blue; color: white; padding: 10px 20px; border-radius: 10px; border: none; cursor: pointer; }
+        .services, .contact { padding: 50px 20px; text-align: center; }
+        .service-container { display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; }
+        .service-card { background: #f0f0f0; padding: 20px; border-radius: 10px; width: 250px; }
+        .contact form { max-width: 400px; margin: auto; display: flex; flex-direction: column; gap: 10px; }
+        .contact input, .contact textarea { padding: 10px; width: 100%; border: 1px solid #ccc; border-radius: 5px; }
+        footer { text-align: center; padding: 20px; border-top: 1px solid #ccc; }
+        a {color: #5a9bd5;}
+        a:hover {color: #3d7ea8;}
+    </style>
+</head>
+<body>
+    <header>
+        <img src="logo_czarne.png" alt="HH Leasing" height="75px">
+        <nav>
+            <ul>
+                <li><a href="#uslugi">Usługi</a></li>
+                <li><a href="#kontakt">Kontakt</a></li>
+            </ul>
+        </nav>
+    </header>
+    <section class="hero">
+        <h1>Leasing, Ubezpieczenia, Rejestracja Pojazdów</h1>
+        <p>Profesjonalna obsługa w jednym miejscu</p>
+        <button class="button">Skontaktuj się</button>
+    </section>
+    <section id="uslugi" class="services">
+        <h2>Nasze Usługi</h2>
+        <div class="service-container">
+            <div class="service-card">
+                <h3>Leasing</h3>
+                <p>Szybko i profesjonalnie</p>
+            </div>
+            <div class="service-card">
+                <h3>Ubezpieczenia</h3>
+                <p>Szybko i profesjonalnie</p>
+            </div>
+            <div class="service-card">
+                <h3>Rejestracja pojazdów</h3>
+                <p>Szybko i profesjonalnie</p>
+            </div>
+        </div>
+    </section>
+    <section id="kontakt" class="contact" style="background-color: #f0f0f0;">
+        <h2>Kontakt</h2>
+        <!--
+        <form>
+            <input type="text" placeholder="Imię i nazwisko" required>
+            <input type="email" placeholder="Email" required>
+            <textarea placeholder="Twoja wiadomość" required></textarea>
+            <button class="button" type="submit">Wyślij</button>
+        </form>
+        -->
+        <p><strong>Numer telefonu:</strong> <a href="tel:+48600213126">+48 600 213 126</a></p>
+        <p><strong>E-mail:</strong> <a href="mailto:biuro@hhleasing.pl">biuro@hhleasing.pl</a></p>
+    </section>
+    <footer>
+        <p>&copy; 2025 HH Leasing. Wszelkie prawa zastrzeżone.</p>
+    </footer>
+</body>
+</html>
