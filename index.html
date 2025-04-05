@@ -20,6 +20,20 @@
         footer { text-align: center; padding: 20px; border-top: 1px solid #ccc; }
         a {color: #5a9bd5;}
         a:hover {color: #3d7ea8;}
+        .services {font-family: Arial, sans-serif; max-width: 1200px; margin: 0 auto; padding: 40px 20px;}
+        .services h2 {text-align: center; color: #333; margin-bottom: 40px; font-size: 32px;}
+        .service-container {display: flex; flex-wrap: wrap; justify-content: center; gap: 30px;}
+        .service-card {position: relative; cursor: pointer; padding: 25px; width: 280px; background: #f8f9fa; border-radius: 10px; transition: all 0.3s ease; box-shadow: 0 4px 8px rgba(0,0,0,0.1); border: 1px solid #e0e0e0;}
+        .service-card:hover {transform: translateY(-5px); box-shadow: 0 6px 12px rgba(0,0,0,0.15);}
+        .service-card h3 {color: #2c3e50; margin-top: 0; margin-bottom: 15px; font-size: 22px;}
+        .service-card p {color: #7f8c8d; margin-bottom: 15px; font-size: 16px;}
+        .service-card .click-hint {font-size: 14px; color: #5a9bd5; font-style: italic; margin-top: 10px; display: block;}
+        .service-card.active {background: #e9f5ff; border: 1px solid #5a9bd5;}
+        .service-card.active .click-hint {display: none;}
+        .service-list {margin-top: 15px; padding: 15px; background: white; border-radius: 8px; box-shadow: inset 0 0 5px rgba(0,0,0,0.05); display: none;}
+        .service-list ul {margin: 0; padding-left: 20px; list-style-type: none;}
+        .service-list li {margin-bottom: 8px; padding: 8px 0; border-bottom: 1px solid #eee; color: #34495e;}
+        .service-list li:last-child {border-bottom: none;}
     </style>
 </head>
 <body>
@@ -34,23 +48,63 @@
     </header>
     <section class="hero">
         <h1>Leasing, Ubezpieczenia, Rejestracja Pojazdów</h1>
-        <p>Profesjonalna obsługa w jednym miejscu</p>
+        <p>Przygotujemy ofertę zgodną z Państwa oczekiwaniami.<br> Zajmniemy się sprawą i profesjonalnie poprowadzimy transakcję od początku do końca.</p>
         <button class="button">Skontaktuj się</button>
     </section>
     <section id="uslugi" class="services">
         <h2>Nasze Usługi</h2>
         <div class="service-container">
-            <div class="service-card">
+            <div class="service-card" onclick="toggleService(this, 'leasing')">
                 <h3>Leasing</h3>
                 <p>Szybko i profesjonalnie</p>
+                <span class="click-hint">Kliknij, aby rozwinąć</span>
+                <div class="service-list" id="leasing">
+                    <ul>
+                        <li>Samochody osobowe</li>
+                        <li>Samochody dostawcze do 3,5 t</li>
+                        <li>Motocykle i quady</li>
+                        <li>Samochody ciężarowe</li>
+                        <li>Ciągniki siodłowe</li>
+                        <li>Naczepy i przyczepy</li>
+                        <li>Pojazdy specjalne</li>
+                        <li>Wózki widłowe</li>
+                        <li>Maszyny budowlane i drogowe</li>
+                        <li>Maszyny i urządzenia</li>
+                        <li>Pojazdy nowe i używane</li>
+                    </ul>
+                </div>
             </div>
-            <div class="service-card">
+            
+            <div class="service-card" onclick="toggleService(this, 'ubezpieczenia')">
                 <h3>Ubezpieczenia</h3>
-                <p>Szybko i profesjonalnie</p>
+                <p>Kompleksowa ochrona dopasowana do Twoich potrzeb</p>
+                <span class="click-hint">Kliknij, aby rozwinąć</span>
+                <div class="service-list" id="ubezpieczenia">
+                    <ul>
+                        <li>OC/AC</li>
+                        <li>Assistance</li>
+                        <li>NNW</li>
+                        <li>Ubezpieczenia flotowe</li>
+                        <li>Ochrona gap</li>
+                        <li>Ubezpieczenia biznesowe</li>
+                    </ul>
+                </div>
             </div>
-            <div class="service-card">
+            
+            <div class="service-card" onclick="toggleService(this, 'rejestracja')">
                 <h3>Rejestracja pojazdów</h3>
-                <p>Szybko i profesjonalnie</p>
+                <p>Załatwimy wszystkie formalności za Ciebie</p>
+                <span class="click-hint">Kliknij, aby rozwinąć</span>
+                <div class="service-list" id="rejestracja">
+                    <ul>
+                        <li>Pierwsza rejestracja</li>
+                        <li>Zmiana właściciela</li>
+                        <li>Wyrejestrowanie pojazdu</li>
+                        <li>Zamiana tablic rejestracyjnych</li>
+                        <li>Sprowadzanie pojazdów z zagranicy</li>
+                        <li>Pomoc w uzyskaniu numerów VIN</li>
+                    </ul>
+                </div>
             </div>
         </div>
     </section>
@@ -72,3 +126,21 @@
     </footer>
 </body>
 </html>
+
+<script>
+    function toggleService(card, serviceId) {
+            const currentList = document.getElementById(serviceId);
+            const isActive = card.classList.contains('active');
+            
+            document.querySelectorAll('.service-card').forEach(item => {
+                item.classList.remove('active');
+                const list = item.querySelector('.service-list');
+                if (list) list.style.display = 'none';
+            });
+            
+            if (!isActive) {
+                card.classList.add('active');
+                currentList.style.display = 'block';
+            }
+        }
+</script>
